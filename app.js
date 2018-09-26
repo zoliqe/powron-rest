@@ -66,7 +66,8 @@ function manageService(service, action) {
 	if (!service || !services.includes(service)) return false
 	if (serviceNow && serviceNow !== service) return false
 
-	serviceRelays[service].forEach(relay => sendCmd(action + relay))
+	let i = 0
+	serviceRelays[service].forEach(relay => setTimeout(() => sendCmd(action + relay), i++ * 5000))
 	return true
 }
 

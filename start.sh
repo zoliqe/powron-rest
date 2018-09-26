@@ -11,7 +11,7 @@ systemctl stop serial-getty@ttyAMA0.service
 
 
 # node
-cd ~/powron-rest
+cd /root/powron-rest
 echo "node app.js"
 log="powron-`date \"+%Y%m%d\"`.log"
 node app.js >>${log} 2>&1 &
