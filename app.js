@@ -90,21 +90,25 @@ function log(str) {
 	console.log(new Date().toISOString() + ' ' + str)
 }
 
-
+log('Starting express app')
 const app = express()
 app.get('/', function (req, res) {
 	res.send('Hello World')
 })
 
+log('Registering REST services')
 app.get(serviceURL + 'start', (req, res) => executeAction(req, res, true))
 app.get(serviceURL + 'stop', (req, res) => executeAction(req, res, false))
 app.get('/temps', (req, res) => res.send(temps.readAllC()))
 app.get('/status', (req, res) => res.send({ who: whoNow, service: serviceNow, authTime: authTime }))
 
+log(`Listening on ${port}`)
 app.listen(port)
 
+log(`Activating heartbeat every ${heartbeat} s`)
 setInterval(checkAuthTimeout, heartbeat * 1000)
 
+log(`Opening UART ${uartDev}`)
 const uart = new SerialPort(uartDev,
 	{ baudRate: uartBaudrate },
 	(err) => err && log(`UART ${err.message}`))
