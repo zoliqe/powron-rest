@@ -1,0 +1,22 @@
+{
+  "name": "powron",
+  "version": "1.0.0",
+  "description": "REST services for powron - remote maintenance.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoliqe/powron.git"
+  },
+  "author": "Mike Karas OM4AA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zoliqe/powron/issues"
+  },
+  "homepage": "https://github.com/zoliqe/powron#readme",
+  "dependencies": {
+    "ds18b20": "^0.1.0"
+  }
+}
