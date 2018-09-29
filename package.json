@@ -19,6 +19,7 @@
   "dependencies": {
     "ds18b20-raspi": "^0.2.5",
     "express": "^4.16.3",
+    "mic": "^2.1.2",
     "serialport": "^7.0.2"
   }
 }
